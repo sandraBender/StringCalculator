@@ -35,7 +35,7 @@ public class calculatorTest {
 		assertEquals(6 , calculator.Add("1\n2,3"));
 	}
 
-	@Test
+	/*@Test
 	public void testNegativeNumber(){
 		assertEquals("Negatives not allowed: -1" , calculator.Add("-1,2"));
 	}
@@ -44,6 +44,11 @@ public class calculatorTest {
     @Test
 	public void testMoreNegativeNumbers(){
 		assertEquals("Negatives not allowed: -1" , calculator.Add("2,-4,3,-5"));
+	}*/
+
+	@Test
+	public void testNumberHigherThen1000(){
+		assertEquals(2 , calculator.Add("1001,2"));
 	}
 
 }
