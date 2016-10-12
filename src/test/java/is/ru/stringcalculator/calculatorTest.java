@@ -11,8 +11,13 @@ public class calculatorTest {
 	}
 
 	@Test
-	public void testOneNumber(){
+	public void testOne(){
 		assertEquals(1 , calculator.Add("1"));
+	}
+
+	@Test
+	public void testAnyOneNumber(){
+		assertEquals(3 , calculator.Add("3"));
 	}
 
 	@Test

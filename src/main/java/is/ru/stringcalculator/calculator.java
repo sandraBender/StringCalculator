@@ -13,7 +13,8 @@ public class calculator {
 		}
 
 		else{
-			return 1;
+			int ret = Integer.parseInt(text);
+			return ret;
 		}
 	}
 }
