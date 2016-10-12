@@ -7,8 +7,9 @@ public class calculator {
 			return 0;
 		}
 
-		else if (text.contains(",")) {
-			String[] numbers = text.split(",");
+		else if (text.contains(",") || text.contains("\n")) {
+			String[] numbers = text.split(",|\n");
+			//numbers = text.split("\n");
 			int ret = 0;
 			for(Integer i = 0; i < numbers.length; i++){
 			 	ret += Integer.parseInt(numbers[i]);

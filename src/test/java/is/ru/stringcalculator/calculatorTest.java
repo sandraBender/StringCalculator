@@ -24,4 +24,16 @@ public class calculatorTest {
 	public void testtwoNumbers(){
 		assertEquals(3 , calculator.Add("1,2"));
 	}
+
+	@Test
+	public void testtwoOrMoreNumbers(){
+		assertEquals(7 , calculator.Add("1,2,3,1"));
+	}
+
+	@Test
+	public void testNewLine(){
+		assertEquals(6 , calculator.Add("1\n2,3"));
+	}
+
+
 }
