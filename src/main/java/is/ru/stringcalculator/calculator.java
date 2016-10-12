@@ -11,9 +11,9 @@ public class calculator {
 			return 0;
 		}
 
-		else if (text.contains(",") || text.contains("\n")) {
-			String[] numbers = text.split(",|\n");
-			return stringNumbers(numbers);
+		else if (text.contains(",") || text.contains("\n") || text.contains("//")) {
+
+			return stringNumbers(getSplitter(text));
 		}
 
 		else{
@@ -22,7 +22,7 @@ public class calculator {
 		}
 	}
 
-	public static int stringNumbers(String[] numbers){
+	private static int stringNumbers(String[] numbers){
 		int ret = 0;
 		ArrayList<Integer> negativeNumb = new ArrayList<Integer>();
 
@@ -44,5 +44,20 @@ public class calculator {
 			throw new RuntimeException("Negatives not allowed: " + negativeNumb);
 		}
 		return ret;
+	}
+
+	private static String[] getSplitter(String numbers){
+		String del = ",|\n";
+
+		if (numbers.startsWith("//")){
+			int delimiter = numbers.indexOf("//") + 2; 
+			del = del + "|" + numbers.substring(delimiter, delimiter + 1); 
+			numbers = numbers.substring(delimiter + 2);
+			return numbers.split(del);
+		}
+
+		else {
+			return numbers.split(del);	
+		}
 	}
 }

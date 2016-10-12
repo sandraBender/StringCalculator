@@ -51,4 +51,13 @@ public class calculatorTest {
 		assertEquals(2 , calculator.Add("1001,2"));
 	}
 
+	@Test
+	public void testNewDelimiter(){
+		assertEquals(3 , calculator.Add("//;\n1;2"));
+	}
+
+    @Test
+	public void testNAnotherewDelimiter(){
+		assertEquals(10 , calculator.Add("//&\n1&2,6&1"));
+	}
 }
