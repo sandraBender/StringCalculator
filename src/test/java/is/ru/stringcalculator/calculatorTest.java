@@ -34,8 +34,11 @@ public class calculatorTest {
 	public void testNewLine(){
 		assertEquals(6 , calculator.Add("1\n2,3"));
 	}
+	//@Rule
+      //  public ExpectedException thrown= ExpectedException.none();
 
-	@Test
+
+	/*@Test
 	public void testNegativeNumber(){
 		assertEquals("Negatives not allowed: -1" , calculator.Add("-1,2"));
 	}
@@ -43,8 +46,27 @@ public class calculatorTest {
 
     @Test
 	public void testMoreNegativeNumbers(){
-		assertEquals("Negatives not allowed: -1" , calculator.Add("2,-4,3,-5"));
-	}
+		assertEquals(, calculator.Add("2,-4,3,-5"));
+	}*/
+	@Test
+	public void testNegatives(){
+	try{ 
+    		calculator.Add("-1,2"); 
+    	}
+    	catch (RuntimeException ex){
+    		assertEquals("Negatives not allowed: [-1]", ex.getMessage());
+    	}
+    }	
+
+    @Test
+	public void testMoreNegatives(){
+	try{ 
+    		calculator.Add("2,-4,3,-5"); 
+    	}
+    	catch (RuntimeException ex){
+    		assertEquals("Negatives not allowed: [-4, -5]", ex.getMessage());
+    	}
+    }
 
 	@Test
 	public void testNumberHigherThen1000(){

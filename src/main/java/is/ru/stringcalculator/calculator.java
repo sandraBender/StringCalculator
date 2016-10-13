@@ -41,7 +41,7 @@ public class calculator {
 			}
 		}
 		if (negativeNumb.size() > 0) {
-			throw new RuntimeException("Negatives not allowed: " + negativeNumb);
+			throw new IllegalArgumentException("Negatives not allowed: " + negativeNumb);
 		}
 		return ret;
 	}
